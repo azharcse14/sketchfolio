@@ -29,28 +29,55 @@
     $('#replay-writing').addEventListener('click',() => replay());
     if (!window.portfolioReducedMotion.matches) replay(false);
 
-    // 2 — Open each project as three honest, editable *sample* case-study pages.
+    // 2 — Open each project as three short case-study pages.
     const details = {
+      travela: {
+        problem:'a travel booking and accommodation platform needed one mobile app for android and ios, owned from architecture to release and ongoing maintenance.',
+        solution:'a clean, scalable architecture with efficient state management and rest apis. profiling, optimization and systematic bug fixing made it faster and more stable, and close work with the backend team kept delivery smooth.',
+        note:'how the app is layered, from screen to server. i also help on the backend when mobile needs it.',
+        flow:['mobile ui','state + repository','rest api']
+      },
+      moveon: {
+        problem:'a cross-border shopping and shipping platform has complex product rules and business logic that must work the same on android and ios.',
+        solution:'i led the mobile team, standardized our practices, owned requirements to deployment, and built reusable packages that reduced delivery time.',
+        note:'complex business rules stay out of the ui, so both platforms behave the same.',
+        flow:['mobile app','business rules','shop + shipping apis']
+      },
+      tools: {
+        problem:'teams inside moveon needed their own mobile tools for shipping partners and warehouse admin work.',
+        solution:'two internal enterprise apps, shipping partner and dw-admin, built on the same reusable packages and modules as the main app.',
+        note:'shared packages let three apps grow from one set of building blocks.',
+        flow:['shared packages','internal apps','moveon backend']
+      },
+      royex: {
+        problem:'several clients, several products: a marketplace, a tv channel, a travel guide and a delivery app, each with its own needs.',
+        solution:'native android and cross-platform apps built with clean architecture. new features, bug fixes and performance improvements across existing projects.',
+        note:'one clean architecture approach, reused for every client.',
+        flow:['client needs','android + cross-platform','google play']
+      },
+      tingtong: {
+        problem:'a social media app needs real-time chat, audio and video calls, feeds and posts that feel instant.',
+        solution:'native android with kotlin and mvvm, agora sdk for calls, firebase realtime db, firestore, cloud functions and storage, and exoplayer for media.',
+        note:'the pieces behind chat, calls and the feed.',
+        flow:['kotlin + mvvm','agora + firebase','feeds + calls']
+      },
+      khana: {
+        problem:'cumilla bard needed to collect field data from 8,000 families and turn it into reports for research.',
+        solution:'a native android survey app in java for fast, efficient field data collection and reporting.',
+        note:'from a family visit to a research report.',
+        flow:['field survey','android app','reports']
+      },
       pocket: {
         problem:'i wanted to explore how flutter and a native rust library can communicate. this was a learning exercise, not a shipped rust product.',
         solution:'i have used rust basics with flutter through ffi. i want to keep learning rust and explore more practical integrations.',
+        note:'a simplified picture of flutter and rust communicating through ffi. the exact implementation details are left open.',
         flow:['flutter / dart','dart ffi bridge','rust library']
       },
-      service: {
-        problem:'picture a service that needs clear endpoints, predictable errors, and space to grow without getting tangled.',
-        solution:'shape a small, well-tested http api. split handlers and domain logic, validate inputs, and keep logs useful.',
-        flow:['client request','go api / sample','postgresql']
-      },
-      query: {
-        problem:'sample data is getting bigger. some questions take longer and relationships are starting to get confusing.',
-        solution:'start with a sensible schema. inspect query plans, add purposeful indexes, and keep migrations reversible.',
-        flow:['questions','sql + indexes','postgres / sqlite']
-      }
     };
-    let selectedProject = 'pocket', selectedPage = 'problem';
+    let selectedProject = 'travela', selectedPage = 'problem';
     const caseArea = $('#case-content');
     const renderCase = () => {
-      const item = details[selectedProject] || details.pocket;
+      const item = details[selectedProject] || details.travela;
       $$('.case-tab').forEach(btn => {
         const active = btn.dataset.caseTab === selectedPage;
         btn.classList.toggle('selected', active);
@@ -60,12 +87,12 @@
       caseArea.replaceChildren();
       const label = document.createElement('div');
       label.className='case-label ink';
-      write(label,selectedPage === 'architecture' ? (selectedProject === 'pocket' ? 'ffi bridge / simplified sketch' : 'rough architecture / example') : `${selectedPage} / ${selectedProject === 'pocket' ? 'learning notes' : 'sample notes'}`);
+      write(label,selectedPage === 'architecture' ? (selectedProject === 'pocket' ? 'ffi bridge / simplified sketch' : 'rough architecture / simplified') : `${selectedPage} / ${selectedProject === 'pocket' ? 'learning notes' : 'project notes'}`);
       caseArea.append(label);
       if(selectedPage === 'architecture') {
         const description = document.createElement('p');
         description.className='ink-para';
-        write(description, selectedProject === 'pocket' ? 'a simplified picture of flutter and rust communicating through ffi. the exact implementation details are left open.' : 'a little napkin diagram for an imaginary project. swap each box with your actual components.');
+        write(description, item.note);
         caseArea.append(description);
         const flow = document.createElement('div');
         flow.className='case-arch';
@@ -138,7 +165,7 @@
     // 4 — Explicitly simulated responses. No requests leave the browser.
     let route='projects', requests=0;
     const exampleResponses={
-      projects: () => ({sample:true, projects:[{id:1,name:'pocket notes',stack:['flutter','sqlite']},{id:2,name:'the api workshop',stack:['go','postgresql']}]}),
+      projects: () => ({sample:true, projects:[{id:1,name:'travela',stack:['mobile','rest api']},{id:2,name:'moveon: global shop & ship',stack:['mobile','e-commerce']},{id:3,name:'tingtong',stack:['kotlin','firebase','agora']},{id:4,name:'khana profiler',stack:['java','android']}]}),
       skills: () => ({sample:true, mobile:['android','ios','flutter'], backend:['go','rust basics / flutter ffi'], data:['postgresql','sqlite']})
     };
     const response=$('#api-response'), input=$('#api-note-input'), send=$('#api-send');
