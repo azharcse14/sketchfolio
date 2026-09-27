@@ -1,0 +1,26 @@
+
+/* v7 bug fixes: the note icons stay inside their own columns, even when text is hand-drawn SVGs. */
+.about-facts {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;align-items:start;max-width:100%;}
+.about-facts .fact {display:grid;grid-template-columns:60px minmax(0,1fr);align-items:center;gap:10px;min-width:0;max-width:100%;font-size:19px;transform:none;}
+.about-facts .fact:nth-child(2){transform:rotate(2deg);}
+.about-facts .fact > svg {display:block;box-sizing:border-box;width:60px;height:62px;min-width:0;max-width:60px;flex:none;align-self:start;}
+.about-facts .fact > .ink {display:block;min-width:0;max-width:100%;line-height:1.35;overflow-wrap:anywhere;}
+@media(max-width:570px){
+  .about-facts {grid-template-columns:minmax(0,1fr);gap:17px;}
+  .about-facts .fact {grid-template-columns:54px minmax(0,1fr);align-items:center;font-size:19px;gap:13px;}
+  .about-facts .fact > svg {width:54px;height:56px;max-width:54px;}
+}
+/* This callout was once decorative text; now it is an actual, focusable button. */
+.note-bottom .next-doodle {display:inline-flex;align-items:center;gap:9px;border:0;background:transparent;color:var(--ink-soft);font:inherit;font-size:19px;padding:7px 3px;cursor:pointer;max-width:100%;min-width:0;transform:rotate(-2deg);transition:transform .2s,color .2s;}
+.note-bottom .next-doodle svg{width:min(78px,22vw);height:36px;flex-shrink:0;stroke:var(--terra);stroke-width:2.4;transition:transform .23s;}
+.note-bottom .next-doodle:hover,.note-bottom .next-doodle:focus-visible{color:var(--ink);transform:rotate(0deg) translateY(-2px);text-decoration:underline wavy var(--terra) 1px;text-underline-offset:4px;}
+.note-bottom .next-doodle:hover svg,.note-bottom .next-doodle:focus-visible svg{transform:translateX(8px) rotate(5deg);}
+.note-bottom .next-doodle:focus-visible,#portrait-dialog-image:focus-visible{outline:2px dashed var(--terra);outline-offset:4px;}
+/* The large sketch reveals its corresponding real photograph on pointer hover. */
+#portrait-dialog-image{cursor:pointer;display:block;width:100%;height:min(58dvh,480px);object-fit:contain;transition:opacity .22s ease,filter .22s ease;}
+/* Reserve stable room for either the square real photograph or the taller sketch. */
+#portrait-dialog-image.photo-revealed{filter:contrast(1.015);}
+.portrait-hover-hint{font-size:15px;text-align:center;color:#665849;letter-spacing:.015em;margin:4px 0 9px;}
+@media(hover:none){.portrait-hover-hint{font-size:14px;}}
+@media(prefers-reduced-motion:reduce){#portrait-dialog-image{transition:none;}.note-bottom .next-doodle,.note-bottom .next-doodle svg{transition:none;}}
+
