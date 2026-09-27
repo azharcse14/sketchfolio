@@ -34,6 +34,8 @@
 body.dark .theme-toggle .theme-sun{opacity:0;transform:translateY(11px) rotate(65deg) scale(.4)}
 body.dark .theme-toggle .theme-moon{opacity:1;transform:translateY(0) rotate(-7deg) scale(1)}
 .theme-toggle:disabled{cursor:default}
+.moon-doodle,body.dark .sun-doodle:not(.moon-doodle){display:none}
+body.dark .moon-doodle{display:block}
 .sky-transition{position:fixed;inset:0;z-index:2000;overflow:hidden;pointer-events:none;isolation:isolate}
 .sky-base,.sky-wash{position:absolute;inset:0}
 .sky-transition[data-to="dark"] .sky-base{background:radial-gradient(circle at 65% 35%,#fff5db 0%,#f3e3c5 46%,#dfb989 100%)}
