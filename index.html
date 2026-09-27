@@ -61,18 +61,7 @@
       <a href="#work"><span class="ink" data-ink="my work">my work</span></a>
       <a href="#contact" class="nav-contact"><span class="ink" data-ink="say hello">say hello</span><svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 23q8-9 17-17M10 5l13 1-1 13"/></svg></a>
     </nav>
-    <div class="nav-tools"><div class="play-tools-wrap">
-      <button id="play-tools-toggle" class="play-tools-toggle" type="button" aria-label="Open interactive tools menu" aria-controls="play-tools-menu" aria-expanded="false" title="Interactive tools: terminal & drawing">
-        <svg viewBox="0 0 45 42" fill="none" aria-hidden="true"><path d="M4 5q15-5 36 0l-1 27q-17 5-34-1zM11 13l8 7-8 7M22 27h11M30 9l7-6-2 15-6 6-3-1z"/></svg><span class="ink" data-ink="play">play</span>
-      </button>
-      <div id="play-tools-menu" class="play-tools-menu" hidden>
-        <p class="play-menu-title ink" data-ink="a little more to explore">a little more to explore</p>
-        <a href="#terminal-zone" class="play-tool-link"><svg viewBox="0 0 42 42" fill="none" aria-hidden="true"><path d="M5 6l31-2 1 32-31 1zM12 14l8 7-8 7M22 28h10"/></svg><span><strong class="ink" data-ink="secret terminal">secret terminal</strong><small>Open the developer console</small></span><b aria-hidden="true">↗</b></a>
-        <a href="#draw-zone" class="play-tool-link"><svg viewBox="0 0 42 42" fill="none" aria-hidden="true"><path d="M6 29 29 4q7-4 9 5L16 35l-12 4zM16 25l12 9M5 39l8-12"/></svg><span><strong class="ink" data-ink="draw on page">draw on page</strong><small>Open the on-page pencil case</small></span><b aria-hidden="true">↗</b></a>
-        <button id="motion-toggle" class="motion-option" type="button" aria-pressed="false" aria-label="Turn on reduced motion"><svg viewBox="0 0 42 32" aria-hidden="true" fill="none"><path d="M3 16h15l6-9v18l-6-9M30 8l9-5M31 16h9M30 24l9 6"/></svg><span class="motion-option-text"><strong class="ink" data-ink="less motion">less motion</strong><small>Skip long animations when you prefer</small></span><span class="motion-check" aria-hidden="true">○</span></button>
-        <p class="play-menu-hint">Or find them in the API &amp; Drawing sections ↓</p>
-      </div>
-    </div><button id="theme-toggle" class="round-tool theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Let the sun set">
+    <div class="nav-tools"><button id="theme-toggle" class="round-tool theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Let the sun set">
       <svg class="theme-sun" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M21 10q9 1 10 11-1 9-10 10-11-1-11-10 1-10 11-11zM19 3l1 5M6 8l5 5M2 21l6 1M6 34l5-6M20 37l1-5M33 33l-4-5M37 19l-5 1M31 6l-4 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <svg class="theme-moon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M29 32Q16 36 9 25 3 13 19 5q-4 9 2 16 4 7 8 11zM30 6l1 7M27 10l7-1M34 18l-1 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button><button id="nav-toggle" class="round-tool mobile-only" type="button" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M5 10q14-3 26-1M4 18q15 2 26-1M5 27q12-2 25-1"/></svg></button></div>
@@ -263,5 +252,17 @@
   <div id="sketch-toolbar" class="sketch-toolbar" role="toolbar" aria-label="On-page sketch tools" hidden><span class="ink" data-ink="your pocket pencil case">your pocket pencil case</span><button class="sketch-tool selected" type="button" data-page-tool="pen" aria-pressed="true"><span class="ink" data-ink="pen">pen</span></button><button class="sketch-tool" type="button" data-page-tool="erase" aria-pressed="false"><span class="ink" data-ink="eraser">eraser</span></button><button class="sketch-tool" type="button" id="sketch-undo"><span class="ink" data-ink="undo">undo</span></button><button class="sketch-tool" type="button" id="sketch-sticky"><span class="ink" data-ink="+ sticky note">+ sticky note</span></button><button class="sketch-tool" type="button" id="sketch-clear"><span class="ink" data-ink="clear">clear</span></button><button class="sketch-tool sketch-done" type="button" id="sketch-done"><span class="ink" data-ink="done">done</span></button></div>
   <section id="secret-terminal" class="secret-terminal" role="dialog" aria-modal="false" aria-label="Secret developer terminal" hidden><div class="terminal-head"><span>✳ azharul@sketchbook:~</span><button type="button" id="terminal-close" aria-label="Close terminal">×</button></div><div class="terminal-body" id="terminal-output" role="log" aria-live="polite"><p>Hi, curious human. Type <strong>help</strong> to get started.</p></div><form id="terminal-form" class="terminal-form"><label for="terminal-command">&gt;</label><input id="terminal-command" type="text" autocomplete="off" spellcheck="false" maxlength="64" placeholder="try whoami, skills, rust..." aria-label="Terminal command"/><button type="submit">run ↵</button></form></section>
   <div class="toast keep-type" id="toast" role="status" aria-live="polite"></div>
+  <div class="play-tools-wrap">
+      <button id="play-tools-toggle" class="play-tools-toggle" type="button" aria-label="Open interactive tools menu" aria-controls="play-tools-menu" aria-expanded="false" title="Interactive tools: terminal & drawing">
+        <svg viewBox="0 0 45 42" fill="none" aria-hidden="true"><path d="M4 5q15-5 36 0l-1 27q-17 5-34-1zM11 13l8 7-8 7M22 27h11M30 9l7-6-2 15-6 6-3-1z"/></svg><span class="ink" data-ink="play">play</span>
+      </button>
+      <div id="play-tools-menu" class="play-tools-menu" hidden>
+        <p class="play-menu-title ink" data-ink="a little more to explore">a little more to explore</p>
+        <a href="#terminal-zone" class="play-tool-link"><svg viewBox="0 0 42 42" fill="none" aria-hidden="true"><path d="M5 6l31-2 1 32-31 1zM12 14l8 7-8 7M22 28h10"/></svg><span><strong class="ink" data-ink="secret terminal">secret terminal</strong><small>Open the developer console</small></span><b aria-hidden="true">↗</b></a>
+        <a href="#draw-zone" class="play-tool-link"><svg viewBox="0 0 42 42" fill="none" aria-hidden="true"><path d="M6 29 29 4q7-4 9 5L16 35l-12 4zM16 25l12 9M5 39l8-12"/></svg><span><strong class="ink" data-ink="draw on page">draw on page</strong><small>Open the on-page pencil case</small></span><b aria-hidden="true">↗</b></a>
+        <button id="motion-toggle" class="motion-option" type="button" aria-pressed="false" aria-label="Turn on reduced motion"><svg viewBox="0 0 42 32" aria-hidden="true" fill="none"><path d="M3 16h15l6-9v18l-6-9M30 8l9-5M31 16h9M30 24l9 6"/></svg><span class="motion-option-text"><strong class="ink" data-ink="less motion">less motion</strong><small>Skip long animations when you prefer</small></span><span class="motion-check" aria-hidden="true">○</span></button>
+        <p class="play-menu-hint">Or find them in the API &amp; Drawing sections ↓</p>
+      </div>
+    </div>
 </body>
 </html>
