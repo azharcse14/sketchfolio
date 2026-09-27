@@ -5,7 +5,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.masthead');
     const menu = document.querySelector('#mobile-nav');
-    const playMenu = document.querySelector('#play-tools-menu');
     if (!header) return;
     let previous = Math.max(0, window.scrollY);
     let direction = 0;
@@ -18,7 +17,7 @@
       const current = Math.max(0, window.scrollY);
       const delta = current - previous;
       previous = current;
-      if (current < 70 || !menu?.hidden || !playMenu?.hidden || (header.contains(document.activeElement) && document.activeElement?.matches(':focus-visible'))) {
+      if (current < 70 || !menu?.hidden || (header.contains(document.activeElement) && document.activeElement?.matches(':focus-visible'))) {
         direction = 0; travelled = 0; reveal(); return;
       }
       // Avoid oscillation from tiny touchpad/wheel jitter.
