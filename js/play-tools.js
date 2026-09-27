@@ -10,7 +10,6 @@
       const opening=menu.hidden;
       menu.hidden=!opening;
       opener.setAttribute('aria-expanded',String(opening));
-      document.querySelector('.masthead')?.classList.remove('nav-hidden');
     });
     document.addEventListener('click',event=>{if(!event.target.closest('.play-tools-wrap'))close()});
     document.addEventListener('keydown',event=>{
