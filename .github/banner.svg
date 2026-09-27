@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="900" height="260" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="900" height="260" rx="18" fill="#f5f0e5"/>
+  <g stroke="#a6a697" stroke-width="1" opacity=".45">
+    <path d="M0 62h900M0 102h900M0 142h900M0 182h900M0 222h900"/>
+    <path d="M70 0v260" stroke="#c16b4e" opacity=".6"/>
+  </g>
+  <path d="M14 18Q300 9 452 16t432 1Q891 130 884 244 600 252 450 246T16 243Q8 140 14 18z" stroke="#344039" stroke-width="2.6"/>
+  <path d="M340 4l110 5-3 22-108-6z" fill="#f5d99b" opacity=".85"/>
+  <text x="450" y="128" text-anchor="middle" fill="#344039" font-family="'Comic Sans MS','Chalkboard SE','Segoe Print',cursive" font-size="72">sketchfolio</text>
+  <path d="M275 148q90-12 180-3t175-4" stroke="#c16b4e" stroke-width="3.2"/>
+  <path d="M300 160q80-7 150-1t140-3" stroke="#c16b4e" stroke-width="2" opacity=".6"/>
+  <text x="450" y="205" text-anchor="middle" fill="#676d61" font-family="'Comic Sans MS','Chalkboard SE','Segoe Print',cursive" font-size="24">a hand-drawn portfolio · scribbles &amp; systems</text>
+  <g stroke="#c16b4e" stroke-width="2.4">
+    <path d="M795 52q4 13 1 30M781 66q14 4 30 0M786 56l20 20M806 56l-20 20"/>
+  </g>
+  <g stroke="#344039" stroke-width="2.2">
+    <path d="M120 70q16-4 18 13 1 18-17 18-16-1-17-16 1-14 16-15z" fill="#f5d99b"/>
+    <path d="M121 50v9M121 110v9M92 85h9M142 85h9M100 63l6 6M136 99l6 6M142 63l-6 6M106 99l-6 6"/>
+  </g>
+  <g stroke="#344039" stroke-width="2.2">
+    <path d="M770 170l40-40q8-4 11 3l-39 41-15 5zM760 184l10-14"/>
+    <path d="M735 205q30-9 55 0" stroke="#c16b4e"/>
+  </g>
+</svg>
