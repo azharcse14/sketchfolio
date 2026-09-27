@@ -1,0 +1,27 @@
+
+/* Personal pencil portrait additions · independent of light/dark paper palette */
+.portrait-identity-tag { display:block; position:absolute; z-index:2; right:-16px; top:25px; max-width:185px; background:var(--lemon); color:#33332c; border:2px solid #5b5448; transform:rotate(8deg); padding:9px 11px 7px; box-shadow:2px 5px 0 rgba(32,31,26,.08); font-size:18px; line-height:1.2; border-radius:6px 3px 7px 4px; }
+.portrait-zoom { display:inline-block; margin:12px 0 0; border:0; background:transparent; color:var(--ink); padding:4px 0; font:inherit; font-size:17px; text-decoration:underline wavy var(--terra) 1.5px; cursor:pointer; }
+.portrait-zoom:hover,.portrait-zoom:focus-visible { transform:translateY(-2px) rotate(-1deg); color:var(--terra); }
+.mini-identity-card .formal-zoom { grid-column:1/-1; justify-self:end; margin:0; font-size:15px; }
+.portrait-dialog { padding:16px 16px 20px; border:2px solid #615849; border-radius:18px 12px 22px 14px; background:#f3eadb; color:#3d3a33; box-shadow:0 22px 90px #08080888; max-width:min(89vw,550px); max-height:90dvh; overflow:auto; }
+.portrait-dialog::backdrop { background:rgba(16,22,23,.75); backdrop-filter:blur(6px); }
+.portrait-dialog-close { position:sticky; float:right; z-index:4; top:0; background:#f6e9d1; border:2px solid #4b463c; border-radius:40% 54% 48% 52%; font-size:34px; width:45px; height:45px; line-height:1; cursor:pointer; }
+.portrait-dialog-heading,.portrait-dialog-caption { font-size:22px; padding:6px 4px; clear:both; }
+.portrait-dialog img { display:block; width:100%; max-height:70dvh; object-fit:contain; margin:5px auto; border:1px solid #877c6c; }
+@media(max-width:570px){ .portrait-identity-tag {right:0;top:12px; font-size:15px;max-width:134px;padding:6px 9px;} .portrait-dialog {max-width:94vw;} }
+
+/* v6 · small pieces of the sketchbook. Every border has deliberate human wobble. */
+.portrait-stack{position:relative;display:block;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:18px 13px 16px 14px;background:#ede6d8;isolation:isolate}
+.about-portrait-card .portrait-stack img,.mini-identity-card .portrait-stack img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:auto;margin:0;transition:opacity .66s cubic-bezier(.21,.73,.25,1),transform 1s ease}
+.portrait-stack .portrait-original{opacity:0;transform:scale(1.055);z-index:1}
+.portrait-stack .portrait-sketch{opacity:1;transform:scale(1.0)}
+@media(hover:hover) and (pointer:fine){.portrait-stack:hover .portrait-original{opacity:1;transform:scale(1)}}
+.portrait-stack.show-original .portrait-original{opacity:1;transform:scale(1)}
+.portrait-stack.show-original .portrait-sketch{opacity:0}
+.portrait-reveal-btn,.dialog-reveal-btn{color:var(--ink);background:none;border:1.5px dashed var(--terra);padding:7px 10px;margin:9px 9px 0 0;font:inherit;font-size:16px;transform:rotate(-2deg);border-radius:47% 45% 52% 42%/25% 30% 23% 36%;transition:background .2s,transform .2s;cursor:pointer}
+.portrait-reveal-btn:hover,.portrait-reveal-btn:focus-visible,.dialog-reveal-btn:hover{background:var(--lemon);transform:rotate(1deg) translateY(-2px)}
+.mini-identity-card .portrait-stack{width:100%;min-width:0;aspect-ratio:4/5;grid-column:1;grid-row:1}
+.mini-identity-card .mini-reveal{grid-column:1/-1;justify-self:start;margin:0;font-size:14px}
+.mini-identity-card .formal-zoom{grid-column:1/-1;justify-self:end;margin:-42px 0 0;font-size:14px}
+.dialog-reveal-btn{display:block;margin:10px auto 0;font-size:17px;color:#3d3a33}
