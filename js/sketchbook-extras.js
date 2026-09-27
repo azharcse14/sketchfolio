@@ -53,6 +53,12 @@
 
     // Honest architectures: Go is conceptual; the Rust FFI case is user-reported practice.
     const modes={
+      mobile:{label:'MOBILE CLEAN ARCHITECTURE · how i usually structure an app',steps:[
+        ['App UI','Screens only draw state and send user events. No business logic lives here.','phone'],
+        ['State','State management turns events into new state the UI can render.','bridge'],
+        ['Repository','Decides where data comes from: the network or the offline cache. Injected, so it is easy to test.','reply'],
+        ['API + cache','REST, GraphQL or WebSockets on the network side, and a local store for offline-first data.','database']
+      ]},
       go:{label:'CONCEPTUAL GO API FLOW · not a specific shipped-system claim',steps:[
         ['Mobile client','The UI sends a request; this diagram shows a possible pattern, not a claimed production project.','phone'],
         ['Go API','An illustrative service receives the request, validates data and applies its own rules.','server'],
@@ -115,7 +121,8 @@
       envelope.classList.remove('is-folded');void envelope.offsetWidth;
       if(reduced.matches){envelope.classList.add('is-folded');actions.hidden=false;}
       else{setTimeout(()=>{envelope.classList.add('is-folded');},350);setTimeout(()=>{actions.hidden=false;actions.scrollIntoView({behavior:'smooth',block:'nearest'})},1400)}
-      $('#letter-status').textContent='Your letter is ready. Copy it, then paste it into LinkedIn to send.';
+      $('#letter-mail').href='mailto:mdazharcse14@gmail.com?subject='+encodeURIComponent('A little letter from '+who)+'&body='+encodeURIComponent(drafted);
+      $('#letter-status').textContent='Your letter is ready. Email it, or copy it and paste it into LinkedIn.';
     });
     form.addEventListener('input',()=>{actions.hidden=true;envelope.classList.remove('is-folded')});
     $('#letter-copy').addEventListener('click',async()=>{
@@ -131,11 +138,14 @@
     const openTerm=()=>{term.hidden=false;termToggle.setAttribute('aria-expanded','true');inp.focus()};
     termToggle.addEventListener('click',()=>{term.hidden?openTerm():closeTerm()});$('#terminal-close').addEventListener('click',closeTerm);
     const commands={
-      help:'Commands: help · whoami · skills · rust · projects · linkedin · coffee · clear · exit',
-      whoami:'Azharul Islam — software engineer building mobile apps and backends. This is a hand-drawn personal sketchbook.',
+      help:'Commands: help · whoami · skills · experience · projects · education · email · rust · linkedin · coffee · clear · exit',
+      whoami:'Azharul Islam — software engineer in Dhaka with close to six years of experience building mobile apps and backends, now focusing more on backend. Senior Software Engineer at Travela. This is a hand-drawn personal sketchbook.',
+      experience:'Travela (2025–now) · MoveOn Technologies (2023–2025) · Royex Technologies, remote (2022–2023) · Aventra Consultant (2021–2022) · Centureon IT, intern (2020–2021).',
+      education:'B.Sc. in Computer Science & Engineering, Bangladesh Open University (study center: DUET), 2014–2019.',
+      email:'mdazharcse14@gmail.com — or use the letter in Contact to draft a note first.',
       skills:'Native Android · native iOS · Flutter/Dart · Go · SQL · PostgreSQL · SQLite · Rust basics (Flutter FFI).',
       rust:'Basic Rust familiarity. I have used Rust with Flutter through FFI and want to do more with Rust in future.',
-      projects:'Open the project notebook: Flutter + Rust FFI learning experiment, plus two labeled sample case studies.',
+      projects:'Travela · MoveOn: Global Shop & Ship · Shipping Partner + DW-Admin · Alhafidh, Alsharqiya TV, OTBT UAE, Beepz · TingTong · Khana Profiler · Flutter + Rust FFI experiment.',
       linkedin:'linkedin.com/in/azharcse/ — use the visible LinkedIn link in Contact to open the real profile.',
       coffee:'First the sketch. Then the commit.'
     };
