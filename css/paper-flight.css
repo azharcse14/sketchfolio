@@ -1,0 +1,17 @@
+/* v8 — small hand-inked paper plane travels with in-page navigation. */
+.site-footer{z-index:30;isolation:isolate} .site-footer a{position:relative;z-index:1}
+@media(max-width:570px){.site-footer{padding-bottom:max(148px,env(safe-area-inset-bottom,0px))}}
+.paper-flight{position:fixed;inset:0;z-index:99991;pointer-events:none;overflow:hidden;isolation:isolate}
+.paper-flight-path{position:absolute;inset:0;width:100%;height:100%;overflow:visible;opacity:var(--flight-fade,1);filter:drop-shadow(0 1px 0 var(--paper))}
+.paper-flight-ink,.paper-flight-pencil{fill:none;stroke:var(--terra);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.paper-flight-ink{stroke-dasharray:7 6;opacity:.77}
+.paper-flight-pencil{stroke:var(--ink-soft);stroke-width:.8;opacity:.6;transform:translate(1px,-2px)}
+.paper-flight-plane{position:absolute;top:0;left:0;width:71px;height:76px;transform-origin:50% 50%;will-change:transform,opacity;filter:drop-shadow(0 4px 2px rgba(51,46,31,.21))}
+.paper-flight-plane svg{width:100%;height:100%;overflow:visible}
+.paper-flight-wing{fill:var(--paper-white);stroke:var(--ink);stroke-width:2.9}
+.paper-flight-fold{stroke:var(--ink);stroke-width:2.25}
+.paper-flight-scratch{stroke:var(--terra);stroke-width:1.7;stroke-dasharray:4 3}
+.paper-flight.is-returning .paper-flight-scratch{stroke:var(--mint)}
+@media (max-width:570px){.paper-flight-plane{width:57px;height:61px}.paper-flight-ink{stroke-width:1.6}}
+@media (prefers-reduced-motion:reduce){.paper-flight{display:none!important}}
+
