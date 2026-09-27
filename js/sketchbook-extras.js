@@ -138,11 +138,13 @@
     const openTerm=()=>{term.hidden=false;termToggle.setAttribute('aria-expanded','true');inp.focus()};
     termToggle.addEventListener('click',()=>{term.hidden?openTerm():closeTerm()});$('#terminal-close').addEventListener('click',closeTerm);
     const commands={
-      help:'Commands: help · whoami · skills · experience · projects · education · email · rust · linkedin · coffee · clear · exit',
+      help:'Commands: help · whoami · skills · experience · projects · education · email · phone · github · rust · linkedin · coffee · clear · exit',
       whoami:'Azharul Islam — software engineer in Dhaka with close to six years of experience building mobile apps and backends, now focusing more on backend. Senior Software Engineer at Travela. This is a hand-drawn personal sketchbook.',
       experience:'Travela (2025–now) · MoveOn Technologies (2023–2025) · Royex Technologies, remote (2022–2023) · Aventra Consultant (2021–2022) · Centureon IT, intern (2020–2021).',
       education:'B.Sc. in Computer Science & Engineering, Bangladesh Open University (study center: DUET), 2014–2019.',
       email:'mdazharcse14@gmail.com — or use the letter in Contact to draft a note first.',
+      phone:'+880 1824 752549',
+      github:'github.com/azharcse14',
       skills:'Native Android · native iOS · Flutter/Dart · Go · SQL · PostgreSQL · SQLite · Rust basics (Flutter FFI).',
       rust:'Basic Rust familiarity. I have used Rust with Flutter through FFI and want to do more with Rust in future.',
       projects:'Travela · MoveOn: Global Shop & Ship · Shipping Partner + DW-Admin · Alhafidh, Alsharqiya TV, OTBT UAE, Beepz · TingTong · Khana Profiler · Flutter + Rust FFI experiment.',
