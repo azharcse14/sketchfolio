@@ -24,7 +24,7 @@ Every heading is traced with pen strokes. Every border wobbles a little.
 
 <img src="assets/portrait-sketch.webp" alt="Pencil portrait of Azharul Islam" width="210" align="right" />
 
-**Azharul Islam** is a software engineer working across native **Android**, native **iOS**, **Flutter**, **Go**, **SQL**, **PostgreSQL** and **SQLite**, and is learning **Rust** through Flutter FFI.
+**Azharul Islam** is a software engineer in Dhaka with close to six years of experience, currently a Senior Software Engineer at **Travela** and focusing more on backend, working across native **Android**, native **iOS**, **Flutter**, **Go**, **SQL**, **PostgreSQL** and **SQLite**, and is learning **Rust** through Flutter FFI.
 
 This site is my sketchbook. It isn't a template with a handwriting font on top. The lettering is made of SVG pen paths, each drawn a little differently, so the same letter never looks quite the same twice.
 
@@ -75,13 +75,22 @@ Follows your system setting, and can also be turned on by hand.
 
 ## 📓 Notebook pages
 
+Apps I've built and shipped, each one drawn as a page in the sketchbook.
+
 <table>
   <tr>
-    <td align="center" width="33%"><img src="assets/project-pocket.svg" alt="Flutter meets Rust" width="100%" /><br /><b>flutter meets rust</b><br /><sub>Flutter · FFI · Rust</sub></td>
-    <td align="center" width="33%"><img src="assets/project-service.svg" alt="The API workshop" width="100%" /><br /><b>the api workshop</b><br /><sub>Go · backend</sub></td>
-    <td align="center" width="33%"><img src="assets/project-query.svg" alt="Query garden" width="100%" /><br /><b>query garden</b><br /><sub>SQL · PostgreSQL · SQLite</sub></td>
+    <td align="center" width="33%"><img src="assets/project-travela.svg" alt="Travela" width="100%" /><br /><b>travela</b><br /><sub>Mobile + backend · lead · 2025–now</sub><br />[Play](https://play.google.com/store/apps/details?id=com.travela.xyz) · [App Store](https://apps.apple.com/us/app/travela/id1562887010)</td>
+    <td align="center" width="33%"><img src="assets/project-moveon.svg" alt="MoveOn" width="100%" /><br /><b>moveon: global shop + ship</b><br /><sub>Mobile · team lead</sub><br />[Play](https://play.google.com/store/apps/details?id=com.moveon.global) · [App Store](https://apps.apple.com/us/app/moveon-global-shop-ship/id6737624022)</td>
+    <td align="center" width="33%"><img src="assets/project-moveon-tools.svg" alt="Internal tools" width="100%" /><br /><b>shipping partner + dw-admin</b><br /><sub>Mobile · internal tools</sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="33%"><img src="assets/project-royex.svg" alt="Client apps" width="100%" /><br /><b>four client apps</b><br /><sub>Android + cross-platform · Royex</sub><br />[Alhafidh](https://play.google.com/store/apps/details?id=com.alhafidh.alhafidhmarketapp) · [Alsharqiya TV](https://play.google.com/store/apps/details?id=com.ryx.al_sharqiya) · [OTBT](https://play.google.com/store/apps/details?id=net.royex.otbt) · [Beepz](https://play.google.com/store/apps/details?id=com.beepzapp.app)</td>
+    <td align="center" width="33%"><img src="assets/project-tingtong.svg" alt="TingTong" width="100%" /><br /><b>tingtong</b><br /><sub>Kotlin · native Android</sub><br />[Demo video](https://drive.google.com/file/d/1y2wCCcfxv0tle42QaXcMeo5kFSXuVaIP/view)</td>
+    <td align="center" width="33%"><img src="assets/project-khana.svg" alt="Khana Profiler" width="100%" /><br /><b>khana profiler</b><br /><sub>Java · native Android</sub></td>
   </tr>
 </table>
+
+<sub>…plus <b>flutter meets rust</b>, a small Flutter + Rust FFI learning experiment.</sub>
 
 ## 🚀 Run it locally
 
