@@ -102,11 +102,15 @@
     $('#skill-next').addEventListener('click',()=>{const cards=$$('.skill');const active=cards.findIndex(card=>card.classList.contains('active'));cards[(active+1)%cards.length].click();});
     $$('.filter-button').forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;$$('.filter-button').forEach(b=>{b.classList.toggle('chosen',b===button);b.setAttribute('aria-pressed',String(b===button))});$$('.project-card').forEach(card=>{card.hidden=filter!=='all'&&!card.dataset.tags.split(' ').includes(filter)});toast(filter==='all'?'all sketchbook pages':`${filter} pages only`);}));
     const projects={
-      pocket:['flutter meets rust','a learning experiment: i used basic rust with flutter through ffi. this page is an outline, not a claim of a production rust app.'],
-      service:['the api workshop','a sample go service. replace it with your actual endpoints, architecture, testing, and tradeoffs.'],
-      query:['query garden','a sample database case study. replace it with your real postgresql or sqlite schemas, migrations, indexing and query improvements.']
+      travela:['travela','a travel booking and accommodation platform. i lead mobile development, own the app lifecycle from architecture to release, and contribute to the backend when needed.','shipped / google play + app store'],
+      moveon:['moveon: global shop + ship','a cross-border e-commerce and shipping platform. i led the mobile application team and launched the ios app.','shipped / google play + app store'],
+      tools:['shipping partner + dw-admin','two internal enterprise tools for moveon, built on reusable packages and modules shared with the main app.','shipped / internal enterprise tools'],
+      royex:['four client apps','alhafidh, alsharqiya tv, off the beaten track uae and beepz. native android and cross-platform apps i delivered and maintained at royex.','shipped / client work on google play'],
+      tingtong:['tingtong','a feature-rich native android social media app built with kotlin and mvvm at aventra.','built / native android + demo video'],
+      khana:['khana profiler','a native android survey app in java for cumilla bard, used for an initial survey of 8,000 families.','built / field survey app'],
+      pocket:['flutter meets rust','a learning experiment: i used basic rust with flutter through ffi. this page is an outline, not a claim of a production rust app.','real learning experiment / rust basics']
     };
-    const dialog=$('#project-dialog');$$('[data-open]').forEach(button=>button.addEventListener('click',()=>{const item=projects[button.dataset.open];paint($('#dialog-title'),item[0]);paint($('#dialog-description'),item[1]);const badge=$('#dialog-badge');if(badge)paint(badge,button.dataset.open==='pocket'?'real learning experiment / rust basics':'sample concept / replace with verified work');if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}));
+    const dialog=$('#project-dialog');$$('[data-open]').forEach(button=>button.addEventListener('click',()=>{const item=projects[button.dataset.open];paint($('#dialog-title'),item[0]);paint($('#dialog-description'),item[1]);const badge=$('#dialog-badge');if(badge)paint(badge,item[2]);if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}));
     const closeDialog=()=>dialog.close?dialog.close():dialog.removeAttribute('open');$('#modal-close').addEventListener('click',closeDialog);$('#dialog-done').addEventListener('click',closeDialog);dialog.addEventListener('click',e=>{if(e.target===dialog)closeDialog()});
     $('#copy-email').addEventListener('click',async()=>{const profile='https://www.linkedin.com/in/azharcse/';try{await navigator.clipboard.writeText(profile);toast('linkedin link copied!')}catch{toast('copy this: '+profile)}});
 
