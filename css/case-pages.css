@@ -1,0 +1,11 @@
+/* physical sheets turn slightly instead of instant tab switches */
+.page-turn-hint,.paper-pagination{display:flex;gap:14px;align-items:center;justify-content:space-between;margin:15px 0 9px;color:var(--ink-soft)}
+.page-turn-hint{font-size:16px;letter-spacing:.03em}
+#case-count{font:600 16px/1.4 'Courier New',monospace;letter-spacing:.04em;white-space:nowrap}
+.paper-pagination{margin-top:10px}
+.paper-pagination button{border:1.5px solid var(--line);background:var(--paper-deep);border-radius:5px 15px 5px 12px;padding:7px 13px;font-size:17px;color:var(--ink);min-height:37px}
+.paper-pagination button:disabled{opacity:.34;cursor:not-allowed}
+.paper-pagination button:not(:disabled):hover{transform:rotate(-2deg);background:var(--lemon)}
+#case-content{transform-origin:12% 48%;backface-visibility:hidden;transform-style:preserve-3d}
+#case-content.page-flipping{animation:book-ink-turn .62s cubic-bezier(.2,.66,.15,.97) both}
+@keyframes book-ink-turn{0%{transform:perspective(850px) rotateY(18deg) scale(.965);filter:brightness(.89);opacity:.38}42%{transform:perspective(850px) rotateY(-6deg) scale(.985);opacity:.85}100%{transform:perspective(850px) rotateY(0) scale(1);filter:brightness(1);opacity:1}}
