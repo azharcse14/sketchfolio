@@ -1,0 +1,26 @@
+/* Request path is a deliberately scrawled piece of notebook paper. */
+.arch-workshop{padding-block:65px 115px}
+.arch-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:31px}
+.arch-head .ink-para{font-size:26px;max-width:640px}
+.arch-switch{display:flex;flex-wrap:wrap;gap:9px;align-items:center;padding-bottom:12px}
+.arch-mode{background:transparent;border:2px solid var(--ink-soft);border-radius:52% 44% 49% 45%/23% 27% 20% 25%;padding:11px 14px;font-size:17px;transform:rotate(-1deg);max-width:260px}
+.arch-mode:nth-child(2){transform:rotate(2deg)}
+.arch-mode.is-current,.arch-mode:hover{background:var(--lemon);color:#30392e;border-color:#5e5543}
+.arch-sheet{position:relative;padding:50px clamp(21px,4vw,70px) 47px;border:2px solid var(--ink-soft);border-radius:18px 29px 21px 15px/22px 19px 23px 26px;background:repeating-linear-gradient(0deg,transparent,transparent 32px,color-mix(in srgb,var(--line) 13%,transparent) 33px,transparent 34px),var(--paper-white);box-shadow:9px 12px 0 var(--shadow);transform:rotate(-.3deg)}
+.arch-sheet:before{content:'';position:absolute;top:8px;bottom:8px;left:33px;border-left:1.5px solid color-mix(in srgb,var(--terra) 39%,transparent);pointer-events:none}
+.arch-washi{position:absolute;top:-12px;left:33%;width:115px;height:25px;background:rgba(207,181,142,.58);border:1px solid rgba(93,69,46,.15);transform:rotate(3deg)}
+.arch-kind{font:700 12px/1.6 'Courier New',monospace;color:var(--terra);letter-spacing:.08em;margin:0 0 30px;text-align:center}
+.arch-nodes{display:flex;flex-wrap:nowrap;align-items:center;justify-content:center;gap:12px;margin:auto;min-height:130px}
+.arch-node{flex:1 1 0;min-width:0;max-width:190px;min-height:106px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:13px;background:var(--paper);border:2px solid var(--ink-soft);border-radius:14px 8px 16px 10px/10px 12px 8px 15px;box-shadow:3px 4px 0 var(--shadow);transform:rotate(var(--tilt,-1deg));transition:transform .3s,background .3s,box-shadow .3s;color:var(--ink);font-size:clamp(14px,1.6vw,21px);text-align:center;padding:16px 9px}
+.arch-node:nth-of-type(2){--tilt:2deg}.arch-node:nth-of-type(3){--tilt:-1.4deg}.arch-node:nth-of-type(4){--tilt:1.7deg}
+.arch-node svg{width:46px;height:42px;stroke:currentColor;stroke-width:2;fill:none;overflow:visible}
+.arch-node.is-active{background:var(--mint);box-shadow:4px 5px 0 var(--terra);transform:rotate(0deg) translateY(-8px);outline:2px dashed var(--terra);outline-offset:4px}
+.arch-arrow{flex:0 0 38px;width:38px;height:27px;overflow:visible}
+.arch-arrow path{fill:none;stroke:var(--terra);stroke-width:2.2;stroke-dasharray:3.5 3.5;stroke-linecap:round}
+.arch-sheet.is-playing .arch-arrow path{animation:arrow-travel .7s linear infinite}@keyframes arrow-travel{to{stroke-dashoffset:-14}}
+.arch-explain{margin:40px auto 0;max-width:740px;min-height:185px;background:var(--paper-deep);border:1.5px dashed var(--line);border-radius:17px 12px 19px 12px;padding:25px 26px;color:var(--ink)}
+.arch-explain-label{font:700 12px/1.4 'Courier New',monospace;color:var(--terra);letter-spacing:.08em}
+.arch-explain h3{font-size:33px;line-height:1.2;margin:10px 0 8px;font-weight:500}
+.arch-explain p{font-size:22px;line-height:1.45;margin:0 0 16px;color:var(--ink-soft)}
+#arch-play{background:transparent;border:0;border-bottom:1px wavy var(--terra);text-decoration:underline wavy var(--terra);font-size:18px;color:var(--ink);padding:5px 0}
+#arch-play:disabled{opacity:.55;cursor:wait}
