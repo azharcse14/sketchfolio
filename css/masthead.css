@@ -1,0 +1,29 @@
+
+/* v9: contextual app bar; sticky retains its space, so the page never jumps. */
+.masthead{position:sticky;top:0;z-index:80;background:var(--paper-white);padding-inline:16px;border-radius:0 0 10px 8px;box-shadow:0 6px 14px var(--shadow);transform:translate3d(0,0,0);transition:transform .31s cubic-bezier(.23,.73,.36,1),background .28s ease,box-shadow .28s ease;will-change:transform}
+.masthead.nav-hidden{transform:translate3d(0,calc(-100% - 12px),0);pointer-events:none}
+.masthead.nav-hidden:focus-within{transform:translate3d(0,0,0);pointer-events:auto}
+.masthead .mobile-nav{top:calc(100% + 3px);left:0;right:0}
+/* The two extras now live in their respective sections, not on the homepage. */
+.play-sketch-actions{display:flex;flex-wrap:wrap;align-items:center;gap:13px 22px;margin:27px 0 12px;max-width:620px}
+.play-sketch-actions .sketch-float{position:relative;inset:auto;z-index:auto;flex:none;font-size:21px;max-width:100%;padding:9px 15px;transform:rotate(-3deg)}
+.play-sketch-actions .sketch-float:hover{transform:rotate(0deg) translateY(-3px)}
+.play-sketch-actions >p{margin:0;flex:1 1 180px;color:var(--ink-soft);font-size:17px;line-height:1.25}
+/* During sketch mode the opener moves to body and stays above the canvas. */
+body>.sketch-float.is-active{position:fixed;z-index:100;right:25px;bottom:94px;inset-block-start:auto;font-size:18px;max-width:calc(100vw - 32px)}
+.api-terminal-slot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px 25px;margin-top:34px;padding:20px 24px;background:var(--paper-white);border:2px dashed var(--line);border-radius:9px 15px 8px 14px;transform:rotate(-.45deg)}
+.api-terminal-copy{display:flex;flex-direction:column;gap:5px;max-width:650px;color:var(--ink)}
+.api-terminal-copy>.ink{font-size:24px}
+.api-terminal-copy>small{font:14px/1.4 'Courier New',monospace;color:var(--ink-soft)}
+.api-terminal-slot .terminal-toggle{position:relative;inset:auto;z-index:auto;flex:none;width:auto;min-height:48px;font-size:15px;padding:10px 15px;margin:0;transform:rotate(2deg)}
+.api-terminal-slot .terminal-toggle:hover{transform:rotate(-1deg) translateY(-3px)}
+.api-terminal-slot .terminal-toggle span{white-space:nowrap}
+.secret-terminal{bottom:max(24px,env(safe-area-inset-bottom,0px));z-index:130}
+/* No footer action is covered by a permanent corner control. */
+.site-footer{min-height:125px;padding-block:28px 35px;z-index:30;isolation:isolate}
+.site-footer a{position:relative;z-index:1;flex-shrink:0;max-width:100%;padding:9px 12px 10px;border:1.5px dashed var(--line);border-radius:11px 7px 10px 9px}
+.site-footer a:hover{background:var(--lemon);color:var(--ink)}
+@media(max-width:850px){.masthead{padding-inline:12px}.masthead .mobile-nav{top:calc(100% + 3px)}}
+@media(max-width:570px){.site-footer{padding:28px 0 max(37px,env(safe-area-inset-bottom,0px));gap:14px}.site-footer a{align-self:flex-start;min-height:53px}.play-sketch-actions{gap:12px;margin:25px 0 20px}.play-sketch-actions .sketch-float{font-size:18px;padding:8px 10px}.play-sketch-actions >p{flex-basis:100%;font-size:16px}.api-terminal-slot{padding:18px 14px;margin-top:24px}.api-terminal-copy>.ink{font-size:20px}.api-terminal-slot .terminal-toggle{font-size:14px;padding:7px 12px;min-height:48px}.api-terminal-slot .terminal-toggle svg{width:26px;height:27px}body>.sketch-float.is-active{right:12px;bottom:176px;font-size:15px;padding:6px 10px}.secret-terminal{right:12px;bottom:max(22px,env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 44px)}}
+@media(prefers-reduced-motion:reduce){.masthead{transition:none}}
+
