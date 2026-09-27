@@ -41,3 +41,7 @@
 .sticky-note-layer[hidden]{display:none!important}.sketch-tool:disabled{opacity:.45}.sketch-float:focus-visible,.sketch-tool:focus-visible,.endpoint:focus-visible,.platform-pill:focus-visible{outline:3px dashed var(--terra);outline-offset:3px}
 .work-next-link{display:inline-flex;align-items:center;gap:8px;font-size:23px;margin:30px 0 0 8px;color:var(--terra);transform:rotate(-2deg);border-bottom:2px dashed var(--terra);padding-bottom:3px}.work-next-link svg{width:38px;height:30px;stroke:currentColor;stroke-width:2.1}.work-next-link:hover{transform:rotate(1deg) translateX(5px)}.endpoint:disabled{cursor:progress;opacity:.68}
 @media(max-width:570px){.work-next-link{font-size:19px}}
+/* Six real stops: two rows of three on wide screens. */
+.journey-trail{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(min-width:851px){.journey-trail{row-gap:48px}.journey-stop:nth-of-type(5){transform:rotate(-3deg) translateY(14px)}.journey-stop:nth-of-type(6){transform:rotate(2deg) translateY(-6px);background:var(--paper)}.journey-stop:nth-of-type(n):hover{transform:rotate(0) translateY(-10px)}}
+@media(max-width:850px){.journey-trail{grid-template-columns:repeat(2,minmax(0,1fr))}}
