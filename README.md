@@ -133,6 +133,6 @@ sketchfolio/
 
 <img src="assets/favicon.svg" width="44" alt="" />
 
-<sub>drawn by hand, line by line · say hello on <a href="https://www.linkedin.com/in/azharcse/">LinkedIn</a></sub>
+<sub>drawn by hand, line by line · say hello on <a href="https://www.linkedin.com/in/azharcse/">LinkedIn</a> · <a href="https://github.com/azharcse14">GitHub</a> · <a href="mailto:mdazharcse14@gmail.com">email</a> · <a href="tel:+8801824752549">+880 1824 752549</a></sub>
 
 </div>
