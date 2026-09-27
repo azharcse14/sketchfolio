@@ -1,0 +1,24 @@
+/* A letter that can only be *drafted* here; visitor controls the delivery. */
+.letter-workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 54px;max-width:950px;text-align:left;margin:60px auto 40px;align-items:center}
+.letter-form{display:flex;flex-direction:column;gap:10px;align-items:stretch;text-align:left;position:relative;z-index:2}
+.letter-form label{font-size:22px;color:var(--paper-white)}
+.letter-form input,.letter-form textarea{font:18px/1.5 'Courier New',monospace;color:#344039;background:#faf4e8;border:2px solid #9f9e91;border-radius:6px 8px 9px 4px;padding:13px 15px;outline-offset:4px;resize:vertical;width:100%}
+.letter-form textarea{min-height:125px}
+.letter-form button,.letter-actions button,.letter-actions a{display:inline-flex;align-items:center;justify-content:center;font-size:20px;line-height:1.2;border:2px solid #b3d2b5;border-radius:8px 16px 7px 12px;background:#f2d99d;color:#3d392f;padding:12px 17px;transform:rotate(-1deg);min-height:48px}
+.letter-form button:hover,.letter-actions button:hover,.letter-actions a:hover{transform:rotate(1deg) translateY(-2px)}
+.letter-form small{color:#e6d7c2;font:13px/1.5 system-ui,sans-serif}
+.letter-envelope{position:relative;min-height:315px;isolation:isolate;perspective:900px;align-self:end;display:flex;align-items:center;justify-content:center}
+.letter-paper{position:relative;z-index:2;width:min(100%,310px);min-height:225px;display:flex;flex-direction:column;align-items:flex-start;background:#f8f1e4;border:1.5px solid #8d826e;box-shadow:1px 7px 12px #0002;color:#303c37;padding:18px 22px;transform:translateY(-27px) rotate(-3deg);transition:transform 1s cubic-bezier(.25,.7,.33,.99),opacity .55s ease;overflow:hidden}
+.letter-paper:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0px,transparent 29px,#a4b6b844 30px);pointer-events:none}
+.letter-paper span{font:20px/1.3 'Comic Sans MS',cursive;position:relative}
+.letter-paper p{font:19px/1.45 'Comic Sans MS',cursive;position:relative;flex:1;margin:14px 0;overflow-wrap:anywhere}
+.letter-paper #letter-signature{align-self:flex-end;font-size:16px}
+.envelope-front{pointer-events:none;position:absolute;z-index:4;width:min(100%,330px);height:155px;bottom:17px;left:50%;transform:translateX(-50%);background:#e4bfa0;clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);border:2px solid #b88e73;box-shadow:0 10px 18px #0003}
+.envelope-front svg{position:absolute;inset:0;width:100%;height:100%;stroke:#a88069;stroke-width:2;opacity:.58}
+.envelope-flap{position:absolute;z-index:5;width:min(100%,330px);height:104px;bottom:169px;left:50%;transform:translateX(-50%) rotateX(-175deg);transform-origin:bottom center;clip-path:polygon(0 100%,50% 0,100% 100%);background:#d7ad8c;transition:transform 1s ease;backface-visibility:hidden}
+.letter-envelope.is-folded .letter-paper{transform:translateY(93px) scale(.42) rotate(7deg);opacity:0}
+.letter-envelope.is-folded .envelope-flap{transform:translateX(-50%) rotateX(0deg)}
+.letter-actions{grid-column:1/-1;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;text-align:center;align-items:center}
+.letter-actions[hidden]{display:none!important}
+.letter-actions button,.letter-actions a{font-size:17px;min-height:40px;padding:9px 12px;border-color:var(--lemon)}
+.letter-actions p{width:100%;color:var(--paper-white);font:14px/1.5 system-ui,sans-serif;margin:3px 0}
