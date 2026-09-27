@@ -25,3 +25,8 @@
 
 
 
+/* Store / demo links on a project page: small torn tickets, not app-store badges. */
+.project-links{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.project-links a{font-size:16px;padding:5px 10px 6px;border:1.5px dashed var(--line);border-radius:7px 12px 8px 11px;background:var(--paper);color:var(--terra);transform:rotate(-1deg)}
+.project-links a:nth-child(2n){transform:rotate(1.5deg)}
+.project-links a:hover,.project-links a:focus-visible{background:var(--lemon);color:var(--ink);border-color:var(--ink)}
