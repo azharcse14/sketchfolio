@@ -1,0 +1,15 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Filenames aren't hashed, so keep css/js short-lived or edits won't show up
+/css/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/js/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/assets/*
+  Cache-Control: public, max-age=604800
